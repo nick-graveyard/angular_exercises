@@ -12,10 +12,10 @@ angular.module('myApp.view1', [])
     $scope.search = "Hook";
 
     function fetch(){
-    	$http.get("http://www.omdbapi.com/?t=" + $scope.search + "&tomatoes=true&plot=full")
+    	$http.jsonp("http://www.omdbapi.com/?t=" + $scope.search + "&tomatoes=true&plot=full")
       	.then(function(response){ $scope.details = response.data; });
 
-      	$http.get("http://www.omdbapi.com/?s=" + $scope.search)
+      	$http.jsonp("http://www.omdbapi.com/?s=" + $scope.search)
       	.then(function(response){ $scope.related = response.data; });
     }
 }]);
