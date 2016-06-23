@@ -1,0 +1,13 @@
+<p>This is the partial for view 1.</p>
+
+<div ng-controller="View1Ctrl">
+
+    <input 	type="text" 
+    		ng-model="search" 
+    		ng-model-options="{ debounce: 800 }" 
+    		placeholder="Enter full movie name" 
+    		autofocus />
+ 	
+ 	<div id="main-info" ng-include="'partials/omdb_api_call.html'"></div>
+
+</div>
